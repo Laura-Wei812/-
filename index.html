@@ -1,0 +1,932 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://192.168.50.188/
+Subject: =?utf-8?Q?AI-Biodome=20=E6=99=BA=E6=85=A7=E5=A4=A7=E6=A3=9A?=
+Date: Sat, 9 May 2026 14:27:38 +0800
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--HAyZKLjk1Tha4cvDydYyaBmbu6lsMSPWfkeUxdYzJl----"
+
+
+------MultipartBoundary--HAyZKLjk1Tha4cvDydYyaBmbu6lsMSPWfkeUxdYzJl----
+Content-Type: text/html
+Content-ID: <frame-F6E4C8A4F4968932C50C53AD27A05CB6@mhtml.blink>
+Content-Transfer-Encoding: binary
+Content-Location: http://192.168.50.188/
+
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="cid:css-e58437aa-a3da-456e-9822-db034320195c@mhtml.blink" /><link rel="stylesheet" type="text/css" href="cid:css-9bac8673-ab2f-425a-9ed5-4dd813bf6da4@mhtml.blink" />
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI-Biodome 智慧大棚</title>
+
+
+
+</head>
+<body>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <div class="logo">🌱</div>
+    <div>
+      <div class="brand-text">AI-Biodome</div>
+      <div class="brand-sub">智慧大棚控制台</div>
+    </div>
+  </div>
+  <div class="nav-list">
+    <button class="nav-item active" data-tab="dashboard">
+      <span class="icon">📊</span><span class="nav-label">仪表盘</span>
+    </button>
+    <button class="nav-item" data-tab="control">
+      <span class="icon">⚙️</span><span class="nav-label">设备控制</span>
+    </button>
+    <button class="nav-item" data-tab="history">
+      <span class="icon">📁</span><span class="nav-label">历史数据</span>
+    </button>
+    <button class="nav-item" data-tab="qqbot">
+      <span class="icon">🤖</span><span class="nav-label">QQ 机器人</span>
+    </button>
+    <button class="nav-item" data-tab="system">
+      <span class="icon">📋</span><span class="nav-label">系统信息</span>
+    </button>
+  </div>
+  <div class="sidebar-footer">
+    <div class="conn-badge">
+      <span class="conn-dot on" id="ws-dot"></span>
+      <span id="ws-status-text">已连接</span>
+    </div>
+    <div class="conn-badge" style="margin-top:4px">
+      <span class="conn-dot off" id="gw-dot-side" style="background: rgb(34, 197, 94);"></span>
+      <span id="gw-status-side">GW 在线</span>
+    </div>
+  </div>
+</nav>
+<div class="topbar" id="topbar">
+  <button class="menu-btn">☰</button>
+  <span class="font-bold text-sm text-gray-700">🌱 AI-Biodome</span>
+  <div class="flex items-center gap-2">
+    <span class="conn-dot on" id="ws-dot-mobile" style="width:8px;height:8px;border-radius:50%"></span>
+  </div>
+</div>
+<div class="bottom-tabs" id="bottom-tabs">
+  <button class="tab-btn active" data-tab="dashboard"><span class="t-icon">📊</span>仪表盘</button>
+  <button class="tab-btn" data-tab="control"><span class="t-icon">⚙️</span>控制</button>
+  <button class="tab-btn" data-tab="history"><span class="t-icon">📁</span>历史</button>
+  <button class="tab-btn" data-tab="qqbot"><span class="t-icon">🤖</span>机器人</button>
+  <button class="tab-btn" data-tab="system"><span class="t-icon">📋</span>系统</button>
+</div>
+<button class="ai-float-btn" id="ai-float-btn">💬</button>
+<div class="ai-drawer" id="ai-drawer">
+  <div class="ai-drawer-head">
+    <div class="flex items-center gap-2"><span class="text-lg">🧠</span><span class="font-bold text-sm">AI 智能助手</span></div>
+    <div class="flex items-center gap-2">
+      <button id="btn-ai-analyze" class="px-3 py-1 bg-white/20 hover:bg-white/30 rounded-lg text-xs font-medium transition-colors">环境分析</button>
+      <button class="text-white/80 hover:text-white text-lg" style="background:none;border:none;cursor:pointer">✕</button>
+    </div>
+  </div>
+  <div class="ai-drawer-body" id="ai-chat-box">
+    <div class="flex justify-start pl-2 pr-8">
+      <div class="bg-gray-50 border border-gray-100 p-3 rounded-2xl rounded-tl-none text-sm text-gray-600">你好！我是 AI 助手，可以帮你分析大棚环境数据。点击“环境分析”或直接提问。</div>
+    </div>
+  </div>
+  <div class="ai-drawer-foot">
+    <input type="text" id="ai-input" placeholder="输入你的问题..." class="flex-1 px-3 py-2 text-sm rounded-lg border focus:ring-2 focus:ring-blue-400 outline-none">
+    <button class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-sm font-medium transition-colors">发送</button>
+  </div>
+</div>
+<div class="main-wrap" id="main-wrap">
+<div class="panel active" id="panel-dashboard">
+  <div class="flex items-center justify-between mb-5">
+    <div>
+      <h1 class="text-xl font-bold text-gray-800">实时监控</h1>
+      <p class="text-xs text-gray-400 mt-1" id="val-time-sync">系统时间: 2026-05-09 14:27:37</p>
+    </div>
+    <div class="flex items-center gap-3">
+      <span class="text-xs px-3 py-1 rounded-full font-medium bg-green-50 text-green-600" id="mode-badge">自动模式</span>
+    </div>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
+    <div class="card card-sm sensor-card sc-temp">
+      <div class="flex items-center justify-between"><span class="sensor-icon">🌡️</span><span class="s-badge b-ok" id="badge-temp">正常</span></div>
+      <div class="sensor-val" id="val-temp">25.2 °C</div>
+      <div class="sensor-label">温度</div>
+    </div>
+    <div class="card card-sm sensor-card sc-hum">
+      <div class="flex items-center justify-between"><span class="sensor-icon">💧</span><span class="s-badge b-ok" id="badge-hum">正常</span></div>
+      <div class="sensor-val" id="val-hum">37.9 %</div>
+      <div class="sensor-label">湿度</div>
+    </div>
+    <div class="card card-sm sensor-card sc-lux">
+      <div class="flex items-center justify-between"><span class="sensor-icon">☀️</span><span class="s-badge b-ok" id="badge-lux">正常</span></div>
+      <div class="sensor-val" id="val-lux">613 lx</div>
+      <div class="sensor-label">光照</div>
+    </div>
+    <div class="card card-sm sensor-card sc-soil">
+      <div class="flex items-center justify-between"><span class="sensor-icon">🌱</span><span class="s-badge b-ok" id="badge-soil">正常</span></div>
+      <div class="sensor-val" id="val-soil">33 %</div>
+      <div class="sensor-label">土壤水分</div>
+    </div>
+    <div class="card card-sm sensor-card sc-co2">
+      <div class="flex items-center justify-between"><span class="sensor-icon">☁️</span><span class="s-badge b-warn" id="badge-eco2">注意</span></div>
+      <div class="sensor-val" id="val-eco2">1177 ppm</div>
+      <div class="sensor-label">eCO2</div>
+    </div>
+    <div class="card card-sm sensor-card sc-tvoc">
+      <div class="flex items-center justify-between"><span class="sensor-icon">🧪</span><span class="s-badge b-high" id="badge-tvoc">偏高</span></div>
+      <div class="sensor-val" id="val-tvoc">3421 ppb</div>
+      <div class="sensor-label">TVOC</div>
+    </div>
+  </div>
+  <div class="card mb-6">
+    <h3 class="text-sm font-bold text-gray-600 mb-3">⚡ 环境预警</h3>
+    <div id="alert-list"><div class="alert-item alert-warn">☁️ CO2偏高 (1177ppm)</div><div class="alert-item alert-danger">🧪 TVOC超标 (3421ppb)</div></div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+    <div class="card card-sm"><div class="chart-box" id="chart-th" _echarts_instance_="ec_1778308052928" style="user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"><div style="position: relative; width: 310px; height: 272px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="1085" height="952" style="position: absolute; left: 0px; top: 0px; width: 310px; height: 272px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div></div>
+    <div class="card card-sm"><div class="chart-box" id="chart-ls" _echarts_instance_="ec_1778308052929" style="user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"><div style="position: relative; width: 310px; height: 272px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="1085" height="952" style="position: absolute; left: 0px; top: 0px; width: 310px; height: 272px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div></div>
+    <div class="card card-sm"><div class="chart-box" id="chart-aq" _echarts_instance_="ec_1778308052930" style="user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;"><div style="position: relative; width: 310px; height: 272px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="1085" height="952" style="position: absolute; left: 0px; top: 0px; width: 310px; height: 272px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div class=""></div></div></div>
+  </div>
+  <div class="card">
+    <h3 class="text-sm font-bold text-gray-600 mb-3">📈 实时统计</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-center">
+        <thead><tr class="bg-slate-50 text-gray-500 text-xs">
+          <th class="px-3 py-2 text-left font-semibold">指标</th>
+          <th class="px-3 py-2 font-semibold">最小</th>
+          <th class="px-3 py-2 font-semibold">最大</th>
+          <th class="px-3 py-2 font-semibold">平均</th>
+          <th class="px-3 py-2 font-semibold">当前</th>
+        </tr></thead>
+        <tbody id="stats-body"><tr class="border-b border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 font-medium text-gray-700 text-left text-xs">🌡️ 温度</td><td class="px-3 py-2 text-blue-600 font-mono text-xs">25.1</td><td class="px-3 py-2 text-red-500 font-mono text-xs">25.2</td><td class="px-3 py-2 text-gray-600 font-mono text-xs">25.2</td><td class="px-3 py-2 text-green-700 font-mono text-xs font-bold">25.2 °C</td></tr><tr class="border-b border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 font-medium text-gray-700 text-left text-xs">💧 湿度</td><td class="px-3 py-2 text-blue-600 font-mono text-xs">37.4</td><td class="px-3 py-2 text-red-500 font-mono text-xs">37.9</td><td class="px-3 py-2 text-gray-600 font-mono text-xs">37.7</td><td class="px-3 py-2 text-green-700 font-mono text-xs font-bold">37.9 %</td></tr><tr class="border-b border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 font-medium text-gray-700 text-left text-xs">☀️ 光照</td><td class="px-3 py-2 text-blue-600 font-mono text-xs">613</td><td class="px-3 py-2 text-red-500 font-mono text-xs">614</td><td class="px-3 py-2 text-gray-600 font-mono text-xs">613</td><td class="px-3 py-2 text-green-700 font-mono text-xs font-bold">613 lx</td></tr><tr class="border-b border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 font-medium text-gray-700 text-left text-xs">🌱 土壤</td><td class="px-3 py-2 text-blue-600 font-mono text-xs">33</td><td class="px-3 py-2 text-red-500 font-mono text-xs">34</td><td class="px-3 py-2 text-gray-600 font-mono text-xs">33</td><td class="px-3 py-2 text-green-700 font-mono text-xs font-bold">33 %</td></tr><tr class="border-b border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 font-medium text-gray-700 text-left text-xs">☁️ eCO2</td><td class="px-3 py-2 text-blue-600 font-mono text-xs">1152</td><td class="px-3 py-2 text-red-500 font-mono text-xs">1193</td><td class="px-3 py-2 text-gray-600 font-mono text-xs">1167</td><td class="px-3 py-2 text-green-700 font-mono text-xs font-bold">1177 ppm</td></tr><tr class="border-b border-slate-100 hover:bg-slate-50"><td class="px-3 py-2 font-medium text-gray-700 text-left text-xs">🧪 TVOC</td><td class="px-3 py-2 text-blue-600 font-mono text-xs">3345</td><td class="px-3 py-2 text-red-500 font-mono text-xs">3482</td><td class="px-3 py-2 text-gray-600 font-mono text-xs">3405</td><td class="px-3 py-2 text-green-700 font-mono text-xs font-bold">3421 ppb</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="panel" id="panel-control">
+  <h1 class="text-xl font-bold text-gray-800 mb-5">设备控制</h1>
+  <div class="card mb-6">
+    <div class="flex items-center justify-between">
+      <div>
+        <h3 class="font-bold text-gray-800">运行模式</h3>
+        <p class="text-xs text-gray-400 mt-1">自动模式下设备根据传感器数据自动调节</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-sm font-bold" id="mode-text" style="color:#16a34a">自动</span>
+        <label class="relative inline-flex items-center cursor-pointer">
+          <input type="checkbox" id="cb-mode" class="sr-only peer" checked="">
+          <div class="w-12 h-6 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:bg-green-500 peer-checked:after:translate-x-6 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:shadow"></div>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+    <div class="card dev-card">
+      <div class="dev-info">
+        <div class="dev-icon bg-blue-50"><span>💧</span></div>
+        <div><div class="font-bold text-gray-800 text-sm">水泵</div><div class="text-xs text-gray-400">土壤灌溉</div></div>
+      </div>
+      <div class="toggle disabled" id="cb-pump"></div>
+    </div>
+    <div class="card dev-card">
+      <div class="dev-info">
+        <div class="dev-icon bg-yellow-50"><span>💡</span></div>
+        <div><div class="font-bold text-gray-800 text-sm">补光灯</div><div class="text-xs text-gray-400">植物补光</div></div>
+      </div>
+      <div class="toggle disabled" id="cb-light"></div>
+    </div>
+    <div class="card dev-card">
+      <div class="dev-info">
+        <div class="dev-icon bg-red-50"><span>🔥</span></div>
+        <div><div class="font-bold text-gray-800 text-sm">加热垫</div><div class="text-xs text-gray-400">温度调节</div></div>
+      </div>
+      <div class="toggle disabled" id="cb-heater"></div>
+    </div>
+    <div class="card dev-card">
+      <div class="dev-info">
+        <div class="dev-icon bg-cyan-50"><span>🌀</span></div>
+        <div><div class="font-bold text-gray-800 text-sm">排风扇</div><div class="text-xs text-gray-400">通风换气</div></div>
+      </div>
+      <div class="toggle disabled on" id="cb-fan"></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="font-bold text-gray-800 mb-4">⏰ 定时任务</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-slate-50 rounded-xl p-4">
+        <div class="flex items-center justify-between mb-3">
+          <span class="font-semibold text-sm text-gray-700">🌀 定时通风</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" id="sched-fan-en" class="sr-only peer">
+            <div class="w-10 h-5 bg-gray-300 rounded-full peer peer-checked:bg-blue-500 peer-checked:after:translate-x-5 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all"></div>
+          </label>
+        </div>
+        <div class="flex items-center gap-2 text-sm">
+          <input type="time" id="sched-fan-start" class="px-2 py-1 rounded border text-sm" value="00:00">
+          <span class="text-gray-400">至</span>
+          <input type="time" id="sched-fan-end" class="px-2 py-1 rounded border text-sm" value="00:00">
+        </div>
+      </div>
+      <div class="bg-slate-50 rounded-xl p-4">
+        <div class="flex items-center justify-between mb-3">
+          <span class="font-semibold text-sm text-gray-700">💡 定时补光</span>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" id="sched-light-en" class="sr-only peer">
+            <div class="w-10 h-5 bg-gray-300 rounded-full peer peer-checked:bg-blue-500 peer-checked:after:translate-x-5 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all"></div>
+          </label>
+        </div>
+        <div class="flex items-center gap-2 text-sm">
+          <input type="time" id="sched-light-start" class="px-2 py-1 rounded border text-sm" value="00:00">
+          <span class="text-gray-400">至</span>
+          <input type="time" id="sched-light-end" class="px-2 py-1 rounded border text-sm" value="00:00">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel" id="panel-history">
+  <h1 class="text-xl font-bold text-gray-800 mb-5">历史数据</h1>
+  <div class="card mb-6">
+    <div class="flex flex-wrap items-center gap-3 mb-3">
+      <select id="hist-date-select" class="px-3 py-2 rounded-lg border text-sm focus:ring-2 focus:ring-blue-400 outline-none"><option value="20260509">2026-05-09</option><option value="20260508">2026-05-08</option><option value="20260507">2026-05-07</option><option value="20260506">2026-05-06</option><option value="20260505">2026-05-05</option><option value="20260504">2026-05-04</option><option value="20260503">2026-05-03</option><option value="20260502">2026-05-02</option><option value="20260501">2026-05-01</option><option value="20260430">2026-04-30</option><option value="20260429">2026-04-29</option><option value="20260428">2026-04-28</option><option value="20260418">2026-04-18</option></select>
+      <button class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-sm font-medium transition-colors">查询数据</button>
+      <button class="px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-lg text-sm font-medium transition-colors">查看日志</button>
+    </div>
+    <div class="text-xs text-gray-400" id="storage-info">存储: 660.0KB / 3456KB (19.1%)</div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+    <div class="card card-sm">
+      <h3 class="text-sm font-bold text-gray-600 mb-3">📊 记录粒度</h3>
+      <div class="flex items-center gap-3">
+        <input type="number" id="save-interval" min="10" max="3600" step="10" value="300" class="w-24 px-2 py-1 rounded border text-sm text-center focus:ring-2 focus:ring-blue-400 outline-none">
+        <span class="text-sm text-gray-500">秒</span>
+        <button class="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-xs font-medium transition-colors">保存</button>
+        <span class="text-xs text-gray-400" id="interval-hint">当前: 60秒 (1.0分钟)</span>
+      </div>
+    </div>
+    <div class="card card-sm">
+      <h3 class="text-sm font-bold text-gray-600 mb-3">📥 数据导出</h3>
+      <div class="flex flex-wrap items-center gap-2">
+        <select id="export-start" class="px-2 py-1 rounded border text-sm"><option value="20260509">2026-05-09</option><option value="20260508">2026-05-08</option><option value="20260507">2026-05-07</option><option value="20260506">2026-05-06</option><option value="20260505">2026-05-05</option><option value="20260504">2026-05-04</option><option value="20260503">2026-05-03</option><option value="20260502">2026-05-02</option><option value="20260501">2026-05-01</option><option value="20260430">2026-04-30</option><option value="20260429">2026-04-29</option><option value="20260428">2026-04-28</option><option value="20260418">2026-04-18</option></select>
+        <span class="text-gray-400 text-sm">至</span>
+        <select id="export-end" class="px-2 py-1 rounded border text-sm"><option value="20260509">2026-05-09</option><option value="20260508">2026-05-08</option><option value="20260507">2026-05-07</option><option value="20260506">2026-05-06</option><option value="20260505">2026-05-05</option><option value="20260504">2026-05-04</option><option value="20260503">2026-05-03</option><option value="20260502">2026-05-02</option><option value="20260501">2026-05-01</option><option value="20260430">2026-04-30</option><option value="20260429">2026-04-29</option><option value="20260428">2026-04-28</option><option value="20260418">2026-04-18</option></select>
+        <button class="px-3 py-1 bg-green-500 hover:bg-green-600 text-white rounded-lg text-xs font-medium transition-colors">导出 CSV</button>
+      </div>
+    </div>
+  </div>
+  <div id="hist-charts-wrap" style="display:none" class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+    <div class="card card-sm"><div class="chart-box" id="hist-chart-th"></div></div>
+    <div class="card card-sm"><div class="chart-box" id="hist-chart-ls"></div></div>
+    <div class="card card-sm"><div class="chart-box" id="hist-chart-aq"></div></div>
+  </div>
+  <div id="hist-stats-wrap" style="display:none" class="card mb-6">
+    <h3 class="text-sm font-bold text-gray-600 mb-3">当日统计摘要</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-center">
+        <thead><tr class="bg-slate-50 text-gray-500 text-xs">
+          <th class="px-3 py-2 text-left font-semibold">指标</th>
+          <th class="px-3 py-2 font-semibold">最小</th>
+          <th class="px-3 py-2 font-semibold">最大</th>
+          <th class="px-3 py-2 font-semibold">平均</th>
+          <th class="px-3 py-2 font-semibold">数据点</th>
+        </tr></thead>
+        <tbody id="hist-stats-body"></tbody>
+      </table>
+    </div>
+  </div>
+  <div id="hist-log-wrap" style="display:none" class="card">
+    <h3 class="text-sm font-bold text-gray-600 mb-3">操作日志</h3>
+    <div id="hist-log-list" class="bg-slate-50 rounded-lg p-4 max-h-80 overflow-y-auto text-xs font-mono text-gray-700 space-y-1"></div>
+  </div>
+</div>
+<div class="panel" id="panel-qqbot">
+  <h1 class="text-xl font-bold text-gray-800 mb-5">QQ 机器人</h1>
+  <div class="card mb-6">
+    <div class="flex items-center justify-between mb-4">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">🤖</span>
+        <div>
+          <h3 class="font-bold text-gray-800">机器人配置</h3>
+          <span class="text-xs font-medium" id="qqbot-status" style="color: rgb(22, 163, 74);">Gateway 就绪</span>
+        </div>
+      </div>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="qqbot-enabled" class="sr-only peer">
+        <div class="w-12 h-6 bg-gray-300 rounded-full peer peer-checked:bg-blue-500 peer-checked:after:translate-x-6 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all after:shadow"></div>
+      </label>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+      <div>
+        <label class="block text-xs font-semibold text-gray-500 mb-1">AppID</label>
+        <input type="text" id="qqbot-appid" placeholder="QQ Bot AppID" class="w-full px-3 py-2 text-sm rounded-lg border focus:ring-2 focus:ring-blue-400 outline-none">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-gray-500 mb-1">AppSecret</label>
+        <input type="password" id="qqbot-secret" placeholder="AppSecret" class="w-full px-3 py-2 text-sm rounded-lg border focus:ring-2 focus:ring-blue-400 outline-none">
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-gray-500 mb-1">用户 OpenID（可选）</label>
+        <input type="text" id="qqbot-groupid" placeholder="主动推送用" class="w-full px-3 py-2 text-sm rounded-lg border focus:ring-2 focus:ring-blue-400 outline-none">
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center gap-3">
+      <button class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-sm font-medium transition-colors">保存配置</button>
+      <button class="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg text-sm font-medium transition-colors">发送测试</button>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="card">
+      <h3 class="text-sm font-bold text-gray-600 mb-3">Gateway 状态</h3>
+      <div class="flex items-center gap-3 mb-3">
+        <span class="w-3 h-3 rounded-full" id="gw-status-dot" style="background: rgb(34, 197, 94);"></span>
+        <span class="text-sm font-medium" id="gw-status-text">已连接</span>
+      </div>
+      <p class="text-xs text-gray-400">Gateway 连接后，用户可私聊机器人查询大棚状态</p>
+    </div>
+    <div class="card">
+      <h3 class="text-sm font-bold text-gray-600 mb-3">支持的指令</h3>
+      <div class="space-y-2">
+        <div class="flex items-center gap-2 text-sm"><code class="bg-slate-100 px-2 py-0.5 rounded text-blue-600 font-mono text-xs">状态</code><span class="text-gray-600">查看环境数据</span></div>
+        <div class="flex items-center gap-2 text-sm"><code class="bg-slate-100 px-2 py-0.5 rounded text-blue-600 font-mono text-xs">告警</code><span class="text-gray-600">查看当前告警</span></div>
+        <div class="flex items-center gap-2 text-sm"><code class="bg-slate-100 px-2 py-0.5 rounded text-blue-600 font-mono text-xs">帮助</code><span class="text-gray-600">显示指令列表</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="panel" id="panel-system">
+  <h1 class="text-xl font-bold text-gray-800 mb-5">系统信息</h1>
+  <div class="card mb-6">
+    <h3 class="text-sm font-bold text-gray-600 mb-3">传感器状态</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="flex items-center gap-2 bg-slate-50 rounded-lg p-3">
+        <span class="conn-dot on" id="dot-sht40"></span>
+        <span class="text-sm text-gray-600">SHT40 温湿度</span>
+      </div>
+      <div class="flex items-center gap-2 bg-slate-50 rounded-lg p-3">
+        <span class="conn-dot on" id="dot-bh1750"></span>
+        <span class="text-sm text-gray-600">BH1750 光照</span>
+      </div>
+      <div class="flex items-center gap-2 bg-slate-50 rounded-lg p-3">
+        <span class="conn-dot on" id="dot-sgp30"></span>
+        <span class="text-sm text-gray-600">SGP30 空气</span>
+      </div>
+      <div class="flex items-center gap-2 bg-slate-50 rounded-lg p-3">
+        <span class="conn-dot on" id="dot-soil"></span>
+        <span class="text-sm text-gray-600">ADC 土壤</span>
+      </div>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="card card-sm">
+      <div class="text-xs text-gray-400 mb-1">系统时间</div>
+      <div class="text-lg font-bold text-gray-800" id="val-sys-time">2026-05-09 14:27:37</div>
+    </div>
+    <div class="card card-sm">
+      <div class="text-xs text-gray-400 mb-1">内存使用</div>
+      <div class="text-lg font-bold text-gray-800" id="val-heap">0.4 %</div>
+    </div>
+    <div class="card card-sm">
+      <div class="text-xs text-gray-400 mb-1">WiFi 信号</div>
+      <div class="text-lg font-bold text-gray-800"><span id="val-rssi">-50 dBm</span> <span class="text-sm font-normal" id="val-rssi-quality" style="color: rgb(22, 163, 74);">极好</span></div>
+    </div>
+    <div class="card card-sm">
+      <div class="text-xs text-gray-400 mb-1">运行时间</div>
+      <div class="text-lg font-bold text-gray-800" id="val-uptime">2天 1时 8分</div>
+    </div>
+    <div class="card card-sm">
+      <div class="text-xs text-gray-400 mb-1">芯片信息</div>
+      <div class="text-sm font-bold text-gray-800"><span id="val-chip-rev">--</span> · <span id="val-cpu-cores">2核</span> · <span id="val-cpu-freq">240MHz</span></div>
+    </div>
+    <div class="card card-sm">
+      <div class="text-xs text-gray-400 mb-1">网络</div>
+      <div class="text-sm font-bold text-gray-800" id="val-ip">192.168.50.188</div>
+      <div class="text-xs text-gray-400 mt-1" id="val-mac">AC:A7:04:15:02:50</div>
+    </div>
+    <div class="card card-sm">
+      <div class="text-xs text-gray-400 mb-1">SDK 版本</div>
+      <div class="text-sm font-bold text-gray-800" id="val-sdk">v4.4.7-dirty</div>
+    </div>
+  </div>
+  <div class="card mt-6">
+    <div class="flex items-center gap-3 mb-3">
+      <span class="text-xl">🧠</span>
+      <div>
+        <h3 class="font-bold text-gray-800 text-sm">AI 大模型配置</h3>
+        <span class="text-xs" id="ai-config-status" style="color: rgb(22, 163, 74);">已配置</span>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center gap-3">
+      <input type="password" id="ai-api-key" placeholder="MiniMax API Key" class="flex-1 min-w-[200px] px-3 py-2 text-sm rounded-lg border focus:ring-2 focus:ring-blue-400 outline-none">
+      <button class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg text-sm font-medium transition-colors">保存</button>
+    </div>
+    <p class="text-xs text-gray-400 mt-2">使用 MiniMax-M2.7 模型，请在 <a href="https://platform.minimaxi.com/" target="_blank" class="text-blue-500 underline">platform.minimaxi.com</a> 获取 API Key</p>
+  </div>
+</div>
+</div>
+
+
+
+</body></html>
+------MultipartBoundary--HAyZKLjk1Tha4cvDydYyaBmbu6lsMSPWfkeUxdYzJl----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: cid:css-9bac8673-ab2f-425a-9ed5-4dd813bf6da4@mhtml.blink
+
+@charset "utf-8";
+
+*, ::before, ::after { --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; }
+
+::backdrop { --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; }
+
+*, ::after, ::before { box-sizing: border-box; border-width: 0px; border-style: solid; border-color: rgb(229, 231, 235); }
+
+::after, ::before { --tw-content: ''; }
+
+:host, html { line-height: 1.5; text-size-adjust: 100%; tab-size: 4; font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-feature-settings: normal; font-variation-settings: normal; -webkit-tap-highlight-color: transparent; }
+
+body { margin: 0px; line-height: inherit; }
+
+hr { height: 0px; color: inherit; border-top-width: 1px; }
+
+abbr:where([title]) { text-decoration: underline dotted; }
+
+h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
+
+a { color: inherit; text-decoration: inherit; }
+
+b, strong { font-weight: bolder; }
+
+code, kbd, pre, samp { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-feature-settings: normal; font-variation-settings: normal; font-size: 1em; }
+
+small { font-size: 80%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+
+sub { bottom: -0.25em; }
+
+sup { top: -0.5em; }
+
+table { text-indent: 0px; border-color: inherit; border-collapse: collapse; }
+
+button, input, optgroup, select, textarea { font-family: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 100%; font-weight: inherit; line-height: inherit; letter-spacing: inherit; color: inherit; margin: 0px; padding: 0px; }
+
+button, select { text-transform: none; }
+
+button, input:where([type="button"]), input:where([type="reset"]), input:where([type="submit"]) { appearance: button; background-color: transparent; background-image: none; }
+
+progress { vertical-align: baseline; }
+
+::-webkit-inner-spin-button, ::-webkit-outer-spin-button { height: auto; }
+
+[type="search"] { appearance: textfield; outline-offset: -2px; }
+
+::-webkit-search-decoration { appearance: none; }
+
+::-webkit-file-upload-button { appearance: button; font: inherit; }
+
+summary { display: list-item; }
+
+blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre { margin: 0px; }
+
+fieldset { margin: 0px; padding: 0px; }
+
+legend { padding: 0px; }
+
+menu, ol, ul { list-style: none; margin: 0px; padding: 0px; }
+
+dialog { padding: 0px; }
+
+textarea { resize: vertical; }
+
+input::placeholder, textarea::placeholder { opacity: 1; color: rgb(156, 163, 175); }
+
+[role="button"], button { cursor: pointer; }
+
+:disabled { cursor: default; }
+
+audio, canvas, embed, iframe, img, object, svg, video { display: block; vertical-align: middle; }
+
+img, video { max-width: 100%; height: auto; }
+
+[hidden]:where(:not([hidden="until-found"])) { display: none; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0px; margin: -1px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px; }
+
+.relative { position: relative; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+
+.mb-3 { margin-bottom: 0.75rem; }
+
+.mb-4 { margin-bottom: 1rem; }
+
+.mb-5 { margin-bottom: 1.25rem; }
+
+.mb-6 { margin-bottom: 1.5rem; }
+
+.mt-1 { margin-top: 0.25rem; }
+
+.mt-2 { margin-top: 0.5rem; }
+
+.mt-6 { margin-top: 1.5rem; }
+
+.block { display: block; }
+
+.flex { display: flex; }
+
+.inline-flex { display: inline-flex; }
+
+.grid { display: grid; }
+
+.h-3 { height: 0.75rem; }
+
+.h-5 { height: 1.25rem; }
+
+.h-6 { height: 1.5rem; }
+
+.max-h-80 { max-height: 20rem; }
+
+.w-10 { width: 2.5rem; }
+
+.w-12 { width: 3rem; }
+
+.w-24 { width: 6rem; }
+
+.w-3 { width: 0.75rem; }
+
+.w-full { width: 100%; }
+
+.min-w-\[200px\] { min-width: 200px; }
+
+.flex-1 { flex: 1 1 0%; }
+
+.cursor-pointer { cursor: pointer; }
+
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0px, 1fr)); }
+
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0px, 1fr)); }
+
+.flex-wrap { flex-wrap: wrap; }
+
+.items-center { align-items: center; }
+
+.justify-start { justify-content: flex-start; }
+
+.justify-between { justify-content: space-between; }
+
+.gap-2 { gap: 0.5rem; }
+
+.gap-3 { gap: 0.75rem; }
+
+.gap-4 { gap: 1rem; }
+
+.gap-6 { gap: 1.5rem; }
+
+.space-y-1 > :not([hidden]) ~ :not([hidden]) { --tw-space-y-reverse: 0; margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse))); margin-bottom: calc(0.25rem * var(--tw-space-y-reverse)); }
+
+.space-y-2 > :not([hidden]) ~ :not([hidden]) { --tw-space-y-reverse: 0; margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse))); margin-bottom: calc(0.5rem * var(--tw-space-y-reverse)); }
+
+.overflow-x-auto { overflow-x: auto; }
+
+.overflow-y-auto { overflow-y: auto; }
+
+.rounded { border-radius: 0.25rem; }
+
+.rounded-2xl { border-radius: 1rem; }
+
+.rounded-full { border-radius: 9999px; }
+
+.rounded-lg { border-radius: 0.5rem; }
+
+.rounded-xl { border-radius: 0.75rem; }
+
+.rounded-tl-none { border-top-left-radius: 0px; }
+
+.border { border-width: 1px; }
+
+.border-b { border-bottom-width: 1px; }
+
+.border-gray-100 { --tw-border-opacity: 1; border-color: rgb(243 244 246 / var(--tw-border-opacity, 1)); }
+
+.border-slate-100 { --tw-border-opacity: 1; border-color: rgb(241 245 249 / var(--tw-border-opacity, 1)); }
+
+.bg-blue-50 { --tw-bg-opacity: 1; background-color: rgb(239 246 255 / var(--tw-bg-opacity, 1)); }
+
+.bg-blue-500 { --tw-bg-opacity: 1; background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1)); }
+
+.bg-cyan-50 { --tw-bg-opacity: 1; background-color: rgb(236 254 255 / var(--tw-bg-opacity, 1)); }
+
+.bg-gray-300 { --tw-bg-opacity: 1; background-color: rgb(209 213 219 / var(--tw-bg-opacity, 1)); }
+
+.bg-gray-50 { --tw-bg-opacity: 1; background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1)); }
+
+.bg-gray-500 { --tw-bg-opacity: 1; background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1)); }
+
+.bg-green-500 { --tw-bg-opacity: 1; background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1)); }
+
+.bg-red-50 { --tw-bg-opacity: 1; background-color: rgb(254 242 242 / var(--tw-bg-opacity, 1)); }
+
+.bg-slate-100 { --tw-bg-opacity: 1; background-color: rgb(241 245 249 / var(--tw-bg-opacity, 1)); }
+
+.bg-slate-50 { --tw-bg-opacity: 1; background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1)); }
+
+.bg-white\/20 { background-color: rgba(255, 255, 255, 0.2); }
+
+.bg-yellow-50 { --tw-bg-opacity: 1; background-color: rgb(254 252 232 / var(--tw-bg-opacity, 1)); }
+
+.bg-green-50 { --tw-bg-opacity: 1; background-color: rgb(240 253 244 / var(--tw-bg-opacity, 1)); }
+
+.p-3 { padding: 0.75rem; }
+
+.p-4 { padding: 1rem; }
+
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+
+.py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
+
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+
+.pl-2 { padding-left: 0.5rem; }
+
+.pr-8 { padding-right: 2rem; }
+
+.text-left { text-align: left; }
+
+.text-center { text-align: center; }
+
+.font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+
+.text-xs { font-size: 0.75rem; line-height: 1rem; }
+
+.font-bold { font-weight: 700; }
+
+.font-medium { font-weight: 500; }
+
+.font-normal { font-weight: 400; }
+
+.font-semibold { font-weight: 600; }
+
+.text-blue-500 { --tw-text-opacity: 1; color: rgb(59 130 246 / var(--tw-text-opacity, 1)); }
+
+.text-blue-600 { --tw-text-opacity: 1; color: rgb(37 99 235 / var(--tw-text-opacity, 1)); }
+
+.text-gray-400 { --tw-text-opacity: 1; color: rgb(156 163 175 / var(--tw-text-opacity, 1)); }
+
+.text-gray-500 { --tw-text-opacity: 1; color: rgb(107 114 128 / var(--tw-text-opacity, 1)); }
+
+.text-gray-600 { --tw-text-opacity: 1; color: rgb(75 85 99 / var(--tw-text-opacity, 1)); }
+
+.text-gray-700 { --tw-text-opacity: 1; color: rgb(55 65 81 / var(--tw-text-opacity, 1)); }
+
+.text-gray-800 { --tw-text-opacity: 1; color: rgb(31 41 55 / var(--tw-text-opacity, 1)); }
+
+.text-green-600 { --tw-text-opacity: 1; color: rgb(22 163 74 / var(--tw-text-opacity, 1)); }
+
+.text-white { --tw-text-opacity: 1; color: rgb(255 255 255 / var(--tw-text-opacity, 1)); }
+
+.text-white\/80 { color: rgba(255, 255, 255, 0.8); }
+
+.text-green-700 { --tw-text-opacity: 1; color: rgb(21 128 61 / var(--tw-text-opacity, 1)); }
+
+.text-red-500 { --tw-text-opacity: 1; color: rgb(239 68 68 / var(--tw-text-opacity, 1)); }
+
+.underline { text-decoration-line: underline; }
+
+.outline-none { outline: transparent solid 2px; outline-offset: 2px; }
+
+.transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+
+.after\:absolute::after { content: var(--tw-content); position: absolute; }
+
+.after\:left-\[2px\]::after { content: var(--tw-content); left: 2px; }
+
+.after\:top-\[2px\]::after { content: var(--tw-content); top: 2px; }
+
+.after\:h-4::after { content: var(--tw-content); height: 1rem; }
+
+.after\:h-5::after { content: var(--tw-content); height: 1.25rem; }
+
+.after\:w-4::after { content: var(--tw-content); width: 1rem; }
+
+.after\:w-5::after { content: var(--tw-content); width: 1.25rem; }
+
+.after\:rounded-full::after { content: var(--tw-content); border-radius: 9999px; }
+
+.after\:bg-white::after { content: var(--tw-content); --tw-bg-opacity: 1; background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)); }
+
+.after\:shadow::after { content: var(--tw-content); --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color); box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); }
+
+.after\:transition-all::after { content: var(--tw-content); transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+
+.after\:content-\[\'\'\]::after { --tw-content: ''; content: var(--tw-content); }
+
+.hover\:bg-blue-600:hover { --tw-bg-opacity: 1; background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1)); }
+
+.hover\:bg-gray-600:hover { --tw-bg-opacity: 1; background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1)); }
+
+.hover\:bg-green-600:hover { --tw-bg-opacity: 1; background-color: rgb(22 163 74 / var(--tw-bg-opacity, 1)); }
+
+.hover\:bg-white\/30:hover { background-color: rgba(255, 255, 255, 0.3); }
+
+.hover\:bg-slate-50:hover { --tw-bg-opacity: 1; background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1)); }
+
+.hover\:text-white:hover { --tw-text-opacity: 1; color: rgb(255 255 255 / var(--tw-text-opacity, 1)); }
+
+.focus\:ring-2:focus { --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color); --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color); box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000); }
+
+.focus\:ring-blue-400:focus { --tw-ring-opacity: 1; --tw-ring-color: rgb(96 165 250 / var(--tw-ring-opacity, 1)); }
+
+.peer:checked ~ .peer-checked\:bg-blue-500 { --tw-bg-opacity: 1; background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1)); }
+
+.peer:checked ~ .peer-checked\:bg-green-500 { --tw-bg-opacity: 1; background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1)); }
+
+.peer:checked ~ .peer-checked\:after\:translate-x-5::after { content: var(--tw-content); --tw-translate-x: 1.25rem; transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); }
+
+.peer:checked ~ .peer-checked\:after\:translate-x-6::after { content: var(--tw-content); --tw-translate-x: 1.5rem; transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); }
+
+.peer:focus ~ .peer-focus\:outline-none { outline: transparent solid 2px; outline-offset: 2px; }
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0px, 1fr)); }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0px, 1fr)); }
+  .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0px, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0px, 1fr)); }
+  .lg\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0px, 1fr)); }
+}
+------MultipartBoundary--HAyZKLjk1Tha4cvDydYyaBmbu6lsMSPWfkeUxdYzJl----
+Content-Type: text/css
+Content-Transfer-Encoding: binary
+Content-Location: cid:css-e58437aa-a3da-456e-9822-db034320195c@mhtml.blink
+
+@charset "utf-8";
+
+* { box-sizing: border-box; margin: 0px; padding: 0px; }
+
+:root { --sidebar-w: 220px; --sidebar-collapsed: 64px; --primary: #3b82f6; --accent: #06b6d4; }
+
+body { font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: rgb(241, 245, 249); color: rgb(51, 65, 85); overflow-x: hidden; }
+
+.sidebar { position: fixed; left: 0px; top: 0px; bottom: 0px; width: var(--sidebar-w); background: linear-gradient(rgb(15, 23, 42) 0%, rgb(30, 41, 59) 100%); z-index: 50; display: flex; flex-direction: column; transition: transform 0.3s; }
+
+.sidebar-brand { padding: 20px 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; gap: 12px; }
+
+.sidebar-brand .logo { width: 36px; height: 36px; background: linear-gradient(135deg, rgb(34, 197, 94), rgb(6, 182, 212)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+
+.sidebar-brand .brand-text { color: rgb(248, 250, 252); font-size: 15px; font-weight: 700; white-space: nowrap; }
+
+.sidebar-brand .brand-sub { color: rgb(100, 116, 139); font-size: 11px; }
+
+.nav-list { flex: 1 1 0%; padding: 12px 8px; display: flex; flex-direction: column; gap: 2px; }
+
+.nav-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; color: rgb(148, 163, 184); font-size: 14px; font-weight: 500; cursor: pointer; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; background: none; width: 100%; text-align: left; transition: 0.15s; white-space: nowrap; }
+
+.nav-item:hover { background: rgba(255, 255, 255, 0.06); color: rgb(226, 232, 240); }
+
+.nav-item.active { background: rgba(59, 130, 246, 0.15); color: rgb(96, 165, 250); }
+
+.nav-item .icon { font-size: 18px; width: 24px; text-align: center; flex-shrink: 0; }
+
+.sidebar-footer { padding: 12px 16px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+
+.conn-badge { display: flex; align-items: center; gap: 6px; font-size: 12px; color: rgb(100, 116, 139); }
+
+.conn-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+.conn-dot.on { background: rgb(34, 197, 94); box-shadow: rgb(34, 197, 94) 0px 0px 6px; }
+
+.conn-dot.off { background: rgb(239, 68, 68); }
+
+.conn-dot.pending { background: rgb(245, 158, 11); animation: 1.5s ease 0s infinite normal none running pulse; }
+
+@keyframes pulse { 
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.main-wrap { margin-left: var(--sidebar-w); min-height: 100vh; padding: 24px; transition: margin 0.3s; }
+
+.topbar { display: none; position: fixed; top: 0px; left: 0px; right: 0px; height: 56px; background: rgb(255, 255, 255); border-bottom: 1px solid rgb(226, 232, 240); z-index: 40; padding: 0px 16px; align-items: center; justify-content: space-between; }
+
+.topbar .menu-btn { width: 36px; height: 36px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; background: rgb(241, 245, 249); border-radius: 8px; font-size: 18px; cursor: pointer; }
+
+.bottom-tabs { display: none; position: fixed; bottom: 0px; left: 0px; right: 0px; height: 60px; background: rgb(255, 255, 255); border-top: 1px solid rgb(226, 232, 240); z-index: 40; justify-content: space-around; align-items: center; padding-bottom: env(safe-area-inset-bottom); }
+
+.tab-btn { display: flex; flex-direction: column; align-items: center; gap: 2px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; background: none; color: rgb(148, 163, 184); font-size: 10px; cursor: pointer; padding: 4px 8px; }
+
+.tab-btn.active { color: var(--primary); }
+
+.tab-btn .t-icon { font-size: 20px; }
+
+.panel { display: none; }
+
+.panel.active { display: block; }
+
+.card { background: rgb(255, 255, 255); border-radius: 16px; box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 3px; padding: 20px; border: 1px solid rgb(241, 245, 249); }
+
+.card-sm { padding: 16px; }
+
+.sensor-card { display: flex; flex-direction: column; gap: 8px; position: relative; overflow: hidden; }
+
+.sensor-card::before { content: ""; position: absolute; top: 0px; left: 0px; right: 0px; height: 3px; border-radius: 16px 16px 0px 0px; }
+
+.sensor-card.sc-temp::before { background: linear-gradient(90deg, rgb(239, 68, 68), rgb(249, 115, 22)); }
+
+.sensor-card.sc-hum::before { background: linear-gradient(90deg, rgb(59, 130, 246), rgb(6, 182, 212)); }
+
+.sensor-card.sc-lux::before { background: linear-gradient(90deg, rgb(245, 158, 11), rgb(234, 179, 8)); }
+
+.sensor-card.sc-soil::before { background: linear-gradient(90deg, rgb(34, 197, 94), rgb(16, 185, 129)); }
+
+.sensor-card.sc-co2::before { background: linear-gradient(90deg, rgb(20, 184, 166), rgb(6, 182, 212)); }
+
+.sensor-card.sc-tvoc::before { background: linear-gradient(90deg, rgb(168, 85, 247), rgb(139, 92, 246)); }
+
+.sensor-icon { font-size: 28px; }
+
+.sensor-val { font-size: 28px; font-weight: 800; color: rgb(15, 23, 42); font-variant-numeric: tabular-nums; }
+
+.sensor-label { font-size: 12px; color: rgb(100, 116, 139); font-weight: 500; }
+
+.s-badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+
+.s-badge.b-ok { background: rgb(220, 252, 231); color: rgb(22, 163, 74); }
+
+.s-badge.b-warn { background: rgb(254, 243, 199); color: rgb(217, 119, 6); }
+
+.s-badge.b-high { background: rgb(254, 226, 226); color: rgb(220, 38, 38); }
+
+.s-badge.b-low { background: rgb(219, 234, 254); color: rgb(37, 99, 235); }
+
+.dev-card { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; }
+
+.dev-info { display: flex; align-items: center; gap: 12px; }
+
+.dev-icon { width: 42px; height: 42px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+
+.toggle { position: relative; width: 44px; height: 24px; border-radius: 12px; background: rgb(203, 213, 225); cursor: pointer; transition: 0.2s; }
+
+.toggle.on { background: rgb(59, 130, 246); }
+
+.toggle::after { content: ""; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; border-radius: 50%; background: rgb(255, 255, 255); transition: 0.2s; box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px; }
+
+.toggle.on::after { left: 22px; }
+
+.toggle.disabled { opacity: 0.5; cursor: not-allowed; }
+
+.chart-box { height: 280px; border-radius: 12px; background: rgb(248, 250, 252); padding: 4px; }
+
+.alert-item { padding: 8px 12px; border-radius: 8px; font-size: 13px; margin-bottom: 6px; }
+
+.alert-danger { background: rgb(254, 242, 242); color: rgb(220, 38, 38); border-left: 3px solid rgb(239, 68, 68); }
+
+.alert-warn { background: rgb(255, 251, 235); color: rgb(217, 119, 6); border-left: 3px solid rgb(245, 158, 11); }
+
+.ai-float-btn { position: fixed; bottom: 80px; right: 20px; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, rgb(59, 130, 246), rgb(139, 92, 246)); color: rgb(255, 255, 255); border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; font-size: 24px; cursor: pointer; box-shadow: rgba(59, 130, 246, 0.4) 0px 4px 12px; z-index: 35; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; }
+
+.ai-float-btn:hover { transform: scale(1.1); }
+
+.ai-drawer { position: fixed; bottom: 0px; right: 0px; width: 380px; max-width: 100vw; height: 70vh; max-height: 600px; background: rgb(255, 255, 255); border-radius: 16px 16px 0px 0px; box-shadow: rgba(0, 0, 0, 0.12) -4px -4px 20px; z-index: 55; display: flex; flex-direction: column; transform: translateY(100%); transition: transform 0.3s; overflow: hidden; }
+
+.ai-drawer.open { transform: translateY(0px); }
+
+.ai-drawer-head { padding: 14px 16px; background: linear-gradient(135deg, rgb(59, 130, 246), rgb(139, 92, 246)); color: rgb(255, 255, 255); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+
+.ai-drawer-body { flex: 1 1 0%; overflow-y: auto; padding: 12px; }
+
+.ai-drawer-foot { padding: 10px; border-top: 1px solid rgb(226, 232, 240); display: flex; gap: 8px; }
+
+@media (max-width: 768px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.open { transform: translateX(0px); }
+  .sidebar-overlay { display: none; position: fixed; inset: 0px; background: rgba(0, 0, 0, 0.4); z-index: 45; }
+  .sidebar-overlay.show { display: block; }
+  .main-wrap { margin-left: 0px; padding: 72px 12px 76px; }
+  .topbar { display: flex; }
+  .bottom-tabs { display: flex; }
+  .ai-float-btn { bottom: 72px; right: 12px; width: 46px; height: 46px; font-size: 20px; }
+  .ai-drawer { width: 100%; height: 60vh; border-radius: 16px 16px 0px 0px; }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar { width: var(--sidebar-collapsed); }
+  .sidebar .brand-text, .sidebar .brand-sub, .sidebar .nav-label { display: none; }
+  .sidebar .nav-item { justify-content: center; padding: 12px; }
+  .sidebar .sidebar-footer .conn-badge span:not(.conn-dot) { display: none; }
+  .main-wrap { margin-left: var(--sidebar-collapsed); }
+}
+------MultipartBoundary--HAyZKLjk1Tha4cvDydYyaBmbu6lsMSPWfkeUxdYzJl------
